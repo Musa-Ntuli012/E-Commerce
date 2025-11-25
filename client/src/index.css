@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-neutral-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-neutral-background text-neutral-text-primary;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primary-dark text-white px-8 py-3 rounded-lg font-semibold text-base tracking-wide;
+    @apply shadow-primary hover:shadow-primary-lg transition-all duration-300;
+    @apply hover:-translate-y-0.5 active:translate-y-0;
+    @apply focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary border-2 border-primary px-8 py-3 rounded-lg font-semibold;
+    @apply hover:bg-primary-light transition-colors duration-200;
+    @apply focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-primary px-6 py-3 rounded-lg font-semibold;
+    @apply hover:bg-primary-light/10 transition-colors duration-200;
+    @apply focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2;
+  }
+
+  .btn-sm {
+    @apply px-5 py-2 text-sm;
+  }
+
+  .btn-lg {
+    @apply px-10 py-4 text-lg;
+  }
+
+  /* Input Styles */
+  .input-field {
+    @apply w-full px-4 py-3 border-2 border-neutral-border rounded-lg;
+    @apply bg-white text-neutral-text-primary text-base;
+    @apply transition-all duration-200;
+    @apply focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none;
+    @apply placeholder:text-neutral-text-muted;
+  }
+
+  .input-field-error {
+    @apply border-accent-error focus:border-accent-error focus:ring-accent-error/10;
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-white rounded-xl border border-neutral-border shadow-md;
+    @apply transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:shadow-xl hover:-translate-y-1;
+  }
+
+  /* Product Card */
+  .product-card {
+    @apply card card-hover overflow-hidden cursor-pointer;
+  }
+
+  .product-card-image {
+    @apply w-full aspect-square object-cover transition-transform duration-500;
+    @apply group-hover:scale-105;
+  }
+
+  /* Badge Styles */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-primary {
+    @apply bg-primary text-white;
+  }
+
+  .badge-success {
+    @apply bg-accent-success text-white;
+  }
+
+  .badge-warning {
+    @apply bg-accent-warning text-white;
+  }
+
+  .badge-error {
+    @apply bg-accent-error text-white;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent;
+  }
+
+  /* Section Spacing */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Skeleton Loader */
+  .skeleton {
+    @apply animate-shimmer bg-gradient-to-r from-neutral-surface via-neutral-surface-dark to-neutral-surface;
+    background-size: 1000px 100%;
+  }
+}
+
+@layer utilities {
+  /* Text Gradients */
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent;
+  }
+
+  .text-gradient-success {
+    @apply bg-gradient-to-r from-secondary to-accent-success bg-clip-text text-transparent;
+  }
+
+  /* Background Gradients */
+  .bg-gradient-hero {
+    background: linear-gradient(135deg, #E87722 0%, #C45E10 100%);
+  }
+
+  .bg-gradient-card {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 100%);
+  }
+
+  .bg-gradient-success {
+    background: linear-gradient(135deg, #2C5F2D 0%, #10B981 100%);
+  }
+
+  /* Animations */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .animate-stagger-1 {
+    animation-delay: 0.1s;
+  }
+
+  .animate-stagger-2 {
+    animation-delay: 0.2s;
+  }
+
+  .animate-stagger-3 {
+    animation-delay: 0.3s;
+  }
+
+  .animate-stagger-4 {
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

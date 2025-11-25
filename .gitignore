@@ -1,0 +1,31 @@
+# Node / npm
+node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+serviceAccountKey.json
+
+# OS / Editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Build outputs
+dist/
+dist-ssr/
+coverage/
+.firebase/
+
+# Misc
+.parcel-cache
+.cache
+

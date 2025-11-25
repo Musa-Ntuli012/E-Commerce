@@ -1,0 +1,12 @@
+{
+  "name": "sa-ecommerce-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "seed:products": "node scripts/seed-products.js"
+  },
+  "dependencies": {
+    "firebase": "^12.6.0",
+    "firebase-admin": "^12.6.0"
+  }
+}

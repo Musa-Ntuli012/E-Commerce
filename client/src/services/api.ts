@@ -204,7 +204,7 @@ export const productsApi = {
     sortBy?: string;
     sortOrder?: 'asc' | 'desc';
   }) => {
-    let q = collection(db, 'products');
+    const q = collection(db, 'products');
     const constraints = [];
 
     if (params?.category) constraints.push(where('category', '==', params.category));

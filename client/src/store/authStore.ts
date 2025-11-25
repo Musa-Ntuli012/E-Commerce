@@ -117,13 +117,9 @@ export const useAuthStore = create<AuthState>()(
       },
 
       updateProfile: async (data) => {
-        try {
-          const response = await authApi.updateProfile(data);
-          if (response.success && response.user) {
-            set({ user: response.user });
-          }
-        } catch (error) {
-          throw error;
+        const response = await authApi.updateProfile(data);
+        if (response.success && response.user) {
+          set({ user: response.user });
         }
       },
     }),
